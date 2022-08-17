@@ -5,11 +5,11 @@ import { useState } from "react"
 
 /**
  * @param {Object} props
- * @param {String} props.title
+ * @param {String} props.title obligatoire
  * @param {String | Array} props.text une chaine ou un tableau d'éléments JSX
- * @param {("superRadius")} [props.extraClass]
+ * @param {String} [props.extraClass]
  * @component
- * source : https://www.youtube.com/watch?v=IF6k0uZuypA
+ * https://fr.reactjs.org/docs/hooks-overview.html
  */
 function Dropdown({ title, text, extraClass }) {
     const [dropdownOpened, setDropdown] = useState(false)
