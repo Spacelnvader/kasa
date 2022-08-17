@@ -9,6 +9,7 @@ import { useState } from "react"
  * @param {String | Array} props.text une chaine ou un tableau d'éléments JSX
  * @param {("superRadius")} [props.extraClass]
  * @component
+ * source : https://www.youtube.com/watch?v=IF6k0uZuypA
  */
 function Dropdown({ title, text, extraClass }) {
     const [dropdownOpened, setDropdown] = useState(false)
