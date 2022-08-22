@@ -12,7 +12,7 @@ import { useState } from "react"
  * https://fr.reactjs.org/docs/hooks-overview.html
  */
 function Dropdown({ title, text, extraClass }) {
-    const [dropdownOpened, setDropdown] = useState(false)
+    const [dropdownOpened, setDropdownOpened] = useState(false)
 
     return dropdownOpened ? (
         <div className={extraClass ? "dropdown " + extraClass : "dropdown"}>
@@ -21,7 +21,7 @@ function Dropdown({ title, text, extraClass }) {
                 <img
                     src={arrowUp}
                     alt="Cacher contenu"
-                    onClick={() => setDropdown(false)}
+                    onClick={() => setDropdownOpened(false)}
                 />
             </div>
             {typeof text === "object" ? convertArray(text) : <p>{text}</p>}
@@ -33,7 +33,7 @@ function Dropdown({ title, text, extraClass }) {
                 <img
                     src={arrowDown}
                     alt="Afficher contenu"
-                    onClick={() => setDropdown(true)}
+                    onClick={() => setDropdownOpened(true)}
                 />
             </div>
         </div>
