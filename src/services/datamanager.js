@@ -1,7 +1,7 @@
 import logements from '../data/logements.json';
 
 
-/**
+/**  jsdoc
  * @typedef {Object} Accomodation
  * @property {String} cover l'image de la carte
  * @property {String} title le titre du logement
@@ -42,13 +42,7 @@ function getAllAccomodation(){
  */
 function getAccomodationById(id){
 
-    // logements.map((logement) => {
-    //     if(id === logement.id) {
-    //         return logements.filter((logement)=>logement.id===id)[0];
-    //     } else {
-    //         return <Page404/>
-    //     }
-    // })
+
     return logements.filter((logement)=>logement.id===id)[0];
 }
 

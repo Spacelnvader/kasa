@@ -5,6 +5,9 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import About from './pages/About';
 import Home from './pages/Home';
+import Page404 from './pages/Page404';
+import Accomodation from './pages/Accomodation';
+
 
 
 
@@ -17,6 +20,8 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />  
+          <Route path="/accomodation/:accomodationId" element={<Accomodation />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
     </BrowserRouter>
     <Footer />
