@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./Gallery.css"
 import arrowLeft from "../../assets/arrow_left.png"
 import arrowRight from "../../assets/arrow_right.png"
-let index = 0
+
 
 /**
  *
@@ -12,17 +12,17 @@ let index = 0
  */
 
 function Gallery({ pictures }) {
-    const [refresh, setRefresh] = useState(0)
+    let [index, setIndex] = useState(0)
 
     function next() {
         index++
         if (index >= pictures.length) index = 0
-        setRefresh(index)
+        setIndex(index)
     }
     function prev() {
         index--
         if (index < 0) index = pictures.length - 1
-        setRefresh(index)
+        setIndex(index)
     }
 
     function showButtons() {

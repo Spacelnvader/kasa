@@ -3,7 +3,6 @@ import { getAccomodationById } from "../services/datamanager"
 import Dropdown from "../components/Dropdown/Dropdown"
 import { useParams } from "react-router-dom"
 import Tag from "../components/Tag/Tag"
-import { useState } from "react"
 
 import Gallery from "../components/Gallery/Gallery"
 import "../components/Gallery/Gallery.css"
@@ -12,10 +11,6 @@ import Page404 from "./Page404"
 function Accomodation() {
     const { accomodationId } = useParams()
     const accomodation = getAccomodationById(accomodationId)
-    console.log(accomodation)
-
-    // const [current, setCurrent] = useState(0)
-    // const length = accomodation.pictures.length
 
     function showRating() {
         const classes = [
@@ -29,9 +24,7 @@ function Accomodation() {
         return "stars " + classes[parseInt(accomodation.rating)]
     }
 
-    return accomodation === undefined ? (
-        <Page404 />
-    ) : (
+    return accomodation ? (
         <section className="accomodationSection">
             <Gallery pictures={accomodation.pictures} />
 
@@ -59,6 +52,9 @@ function Accomodation() {
                 <Dropdown title="Équipements" text={accomodation.equipments} />
             </div>
         </section>
+
+    ) : (
+        <Page404 />
     )
 }
 

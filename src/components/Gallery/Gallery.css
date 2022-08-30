@@ -1,39 +1,4 @@
-/*.slider {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
 
-.photo {
-    width: 1240px;
-    height: 415px;
-    border-radius: 25px;
-    object-fit: cover;
-}
-
-.arrows {
-    width: 100%;
-    position: absolute;
-    top: 40%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.arrowLeft {
-    left: 25px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.arrowRight {
-    position: absolute;
-    right: 25px;
-    cursor: pointer;
-    z-index: 10;
-}
-*/
 
 .slider {
     height: 415px;
