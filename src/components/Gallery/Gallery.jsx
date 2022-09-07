@@ -11,10 +11,12 @@ import arrowRight from "../../assets/arrow_right.png"
  * @returns Le carrousel des photos du logement
  */
 
+//On utilise ici aussi un State pour traquer l'état de notre index (savoir quelle photo est affichée)
 function Gallery({ pictures }) {
     let [index, setIndex] = useState(0)
 
     function next() {
+        // on incrémente l'index de 1 avec la fonction Next et on le réinitialise s'il arrive à 4/4 ou 5/5
         index++
         if (index >= pictures.length) index = 0
         setIndex(index)
@@ -29,6 +31,7 @@ function Gallery({ pictures }) {
         return (
             <div className="navigation">
                 <img
+                //l'image arrowleft sert de bouton pour déclencher la fonction prev
                     src={arrowLeft}
                     className="arrowLeft"
                     onClick={prev}
@@ -38,6 +41,7 @@ function Gallery({ pictures }) {
                     {index + 1}/{pictures.length}
                 </p>
                 <img
+                // l'image arrowRight sert de bouton pour délencher la fonction next
                     src={arrowRight}
                     className="arrowRight"
                     onClick={next}
@@ -54,6 +58,7 @@ function Gallery({ pictures }) {
                 backgroundImage: `url("${pictures[index]}")`,
             }}
         >
+            {/* cet opérateur ternaire nous permettra de ne pas afficher le retour de la fonction showButton si notre tableau d'image ne dépasse pas 1 */}
             {pictures.length > 1 ? showButtons() : ""}
         </div>
     )
