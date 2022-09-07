@@ -44,7 +44,7 @@ function convertArray(arr) {
     return (
         <ul>
             {arr.map((equipment) => (
-                <li>{equipment}</li>
+                <li key={equipment}>{equipment}</li>
             ))}
         </ul>
     )
